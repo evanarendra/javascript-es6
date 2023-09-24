@@ -49,8 +49,42 @@ function Students(name, energy){
 
     this.play = function(hour){
         this.energy -= hour;
-        console.log(`Hali ${this.name}, have a nice play`)
+        console.log(`Halo ${this.name}, have a nice play`);
     }
 }
 
-let register = new Students('Costa', 20);
+let register_ = new Students('Costa', 20);
+
+
+/* Object create */
+
+const methodStudents = {
+    eat: function(portion){
+        this.energy += portion;
+        console.log(`Halo ${this.name}, enjoy your meal`);
+    },
+
+    play: function(hour){
+        this.energy -= hour;
+        console.log(`Halo ${this.name}, have a nice play`);
+    },
+
+    sleep: function(hour){
+        this.energy += hour * 2;
+        console.log(`Halo ${this.name}, have a goodnight`);
+    }
+};
+
+function Students_(name, energy){
+
+
+    let students = Object.create(methodStudents);
+    students.name = name;
+    students.energy = energy;
+
+
+}
+
+let register = Students_('Evan', 50);
+
+let register1 = Students_('Santana', 40);
