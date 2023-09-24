@@ -81,10 +81,11 @@ function Students_(name, energy){
     let students = Object.create(methodStudents);
     students.name = name;
     students.energy = energy;
-
+    
+    return students;
 
 }
 
-let register = Students_('Evan', 50);
+let register = Students_('Monta', 50);
 
 let register1 = Students_('Santana', 40);
